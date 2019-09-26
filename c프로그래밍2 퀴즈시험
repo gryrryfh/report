@@ -1,0 +1,95 @@
+1. c언어의 특징과 장점을 적으시오.
+포인터의 사용이 가능하다. 이식성이 좋다. 컴퓨터에 모든 분야에서 사용할 수 있또록 설계되어 효율적이다.
+학습하는데 오랜시간이 걸리지 않는다.
+
+2. c언어의 활용에 대해 적으시오.
+게임, 운영체제, 필수 시스템 외 컴퓨터와 관련된 다양한 분야에 사용됩니다.
+
+3. 두 실수를 메모리에 초기화 더하고 화면에 출력하시오.
+#include <stdio.h>
+void main(){
+float a=1.2, b=2.5, c;
+c=a+b;
+printf("%f\n", c);
+}
+
+4. 두 실수를 키보드로 받고 더해서 화면에 출력하시오.
+
+#inlcude <stdio.h>
+void main(){
+float a,b,c;
+scanf("%f%f", &a, &b);
+c=a+b;
+printf("%f\n", c);
+}
+
+5. 두 실수를 메모뢰에 젖아하고 함수 add()를 활용하여 더한 결과를 리턴 받아 화면에 출력하시오.
+
+#include <stdio.h>
+float add(float a, float b){
+return a+b;}
+void main(){
+float a=1.5, b=2.3;
+printf("%f\n", add(a,b));
+}
+
+6. my.txt에 33과 22가 들어 있다. 이를 읽고 더하고 결과를 출력하시오.
+#include <stdio.h>
+void main(){
+int a,b;
+FILE*fp;
+fp=fopen("my.txt", "r");
+fscanf(fp, "%d%d", &a, &b);
+fclosef(fp);
+printf("%d\n", a+b);}
+
+7. 3개의 과일을 {"Banana", "Orange", "Kiwi"} 초기화 하고 화면에 출력하시오.
+#include <stdio.h>
+char a[]= "Banana";
+char b[]= "Ornage";
+cahr c[]= "Kiwi";
+void main(){
+printf("%s\n%s\n%s\n", a,b,c);
+}
+
+8. 곱셈용 명령창 계산기를 구현하시오. 매개변수가 2개 이하면 프로그램이 종료 된다.
+#include <stdio.h>
+#include <stdlib.h>
+int main(int n, char*v[]){
+int a,b,c;
+if(n<3){exit(0);}
+a=atoi(v[1]);
+b=atoi(v[3]);
+switch(v[2][0]){
+case'*': c=a*b;
+break; };
+printf("%d\n", c);
+}
+
+9. 두명의 {이름 ,나이, 이메일}을 구조체 배열에 초기하하고 화면에 출력하시오.
+#include <stdio.h>
+struct user{
+char n[80];
+int a;
+char m[80]; };
+int main()){
+struct user me = {"jaegyeong", 19, "worud123@naver.com");
+struct user he = {"gichan", 20, "gichan123@gmail.lcom");
+printf("%s%d%s\n:, me.n, me.a, me.m);
+printf("%s%d%s\n", he.n, he.a, he.m);
+}
+
+10. 두 명의 {이름과 나이 그리고 이메일}을 구조체 배열에 초기화하고 함수 pr()에 포인터 전달하고 화면에 출력하시오.
+#include <stdio.h>
+struct user {
+char n[80];
+int a;
+char m[80];}
+we[2]={{"jaegyeong", 19, "worud123@naver.com"}, {"gichan", 20, "gichan@gmail.com"}};
+int main(){
+struct user*pr,
+pr=we;
+printf("%s%d%s\n", pr->n, pr->a, pr->m);
+pr++;
+printf("%s%d%s\n", pr->n, pr->a, pr->m);
+}
